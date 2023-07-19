@@ -4,9 +4,9 @@ Bagian Utama
 
   @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Lato&family=Lunasima&display=swap');
 
-
+/* Set Semua */
 * {
-    /* box-sizing: border-box; */
+   
     margin-top: 5px;
     border: none;
     font-family: 'Arvo', serif;
@@ -15,17 +15,17 @@ Bagian Utama
 }
 
 label {
-    margin-bottom: 10px; /* Increase or decrease this value as needed */
+    margin-bottom: 10px; 
     justify-content: center;
     align-items: center;
 }
 
 input[type="text"] {
-    margin-top: 3px; /* Increase or decrease this value as needed */
+    margin-top: 3px; 
     justify-content: center;
     align-items: center;
     box-sizing: content-box;
-    width: 99%; /* Set the width to 100% to fill the container */
+    width: 99%; 
 }
 
 #box-utama {
@@ -40,7 +40,6 @@ input[type="text"] {
 
 #bmiForm {
     background-color: #c7c8c9;
-    /* justify-content:stretch; */
     align-items: center;
     padding: 10px;
 }
@@ -83,12 +82,6 @@ input {
 
 /* hasil tampilan */
 
-/* #Hasil{ */
-/* box-shadow: 0 0 20px rgba(0,139,253,0.25);
-margin-bottom: 60px;
-*/
-/*  background-color: rgb(227, 242, 242);
-} */
 
 /*
 Bagian Hasil
@@ -107,9 +100,7 @@ Bagian Hasil
     letter-spacing: 0.8px;
 }
 
-/* div.display {
-color: black;
-} */
+
 #hal2 {
     text-align: center;
 }
@@ -152,27 +143,27 @@ body h1 {
     transform: translate(-50%, -50%);
 }
 
-/* Add a new CSS class to set the color for each category */
+/* Warna Kategori  */
 .category-kekurangan {
-    color: blue; /* Change the color as you like */
+    color: blue; 
 }
 
 .category-normal {
-    color: green; /* Change the color as you like */
+    color: green;
 }
 
 .category-kelebihan {
-    color: orange; /* Change the color as you like */
+    color: orange; 
 }
 
 .category-obesitas {
-    color: red; /* Change the color as you like */
+    color: red; 
 }
 
-/* Center the "Kembali" button */
+/*Mengatur button "Kembali" */
 #kembali {
     text-align: center;
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-top: 20px; 
 }
 
 #kembali input[type="button"] {
@@ -180,6 +171,6 @@ body h1 {
     height: 30px;
     width: 100px;
     color: white;
-    font-size: 14px; /* Adjust the font size as needed */
+    font-size: 14px; 
     
 }
