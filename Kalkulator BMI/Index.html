@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Center the content using flexbox */
+        body {
+            display: flexbox;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set the height of the body to fill the viewport */
+            margin: 5; /* Remove default margin */
+            overflow: visible; /* Hide horizontal scrollbar */
+        }
+
+        .container {
+            width: 80%; /* You can adjust the width as needed */
+        }
+
+        article {
+            text-align: center;
+        }
+
+        /* Styles for the first body tag */
+        .first-body {
+            display: block;
+        }
+
+        /* Styles for the second body tag */
+        .second-body {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="first-body">
+        <h1 style="text-align: center;"><strong>Kalkulator BMI</strong></h1>
+        <div class="a" style="text-align: center; font-size: medium;">
+            <p>
+                <i style="font-size: smaller;">Pacar berkata... Good Looking itu Gak Cuma dari Muka Doang</i> 
+                <br>Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat.
+                <br>Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.
+            </p>
+        </div>
+        <div id="box-utama">
+            <form id="bmiForm">
+                <div id="box1">
+                    <label>
+                        <strong>Jenis Kelamin</strong>
+                    </label><br>
+                    <input type="radio" name="Kelamin" value="Laki-Laki" required>
+                    <label>Laki-Laki</label>
+                    <input type="radio" name="Kelamin" value="Perempuan" required>
+                    <label>Perempuan</label><br><br>
+                </div>
+                <div id="box2">
+                    <label for="bb">
+                        <strong>Berat Badan</strong> (kg)
+                    </label><br>
+                    <input type="text" id="bb" required autocomplete="off"><br><br>
+                </div>
+                <div id="box3">
+                    <label for="age">
+                        <strong>Usia</strong> (tahun)
+                    </label><br>
+                    <input type="text" id="age" required autocomplete="off"><br><br>
+                </div>
+                <div id="box4">
+                    <label for="tb">
+                        <strong>Tinggi Badan</strong> (cm)
+                    </label><br>
+                    <input type="text" id="tb" required autocomplete="off"><br><br>
+                </div>
+                <input type="submit" value="Hitung BMI" class="button">
+                <input type="reset" value="Reset" class="reset">
+            </form>
+        </div>
+        <article>
+            <div style="text-align: center;margin-top: 10px;"><strong>Buat Siapa !?</strong>
+                <br>
+                <p style="font-size: 16px; text-align: center; ">
+                    Orang yang Belum Sempat Peluk Mantannya &#x1F92A
+                  </p>
+                </div>
+        
+            <div style="font-size: 16px;">
+                <p>
+                    <b>Laman ini hanya boleh digunakan oleh orang dewasa </b>(wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI)
+                    <br>dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.
+                </p>
+            </div>
+            <div style="font-size: 12px;">
+                <p>
+                    Kalkulator akan memberi anda gambaran tentang perbandingan berat badan anda dengan nilai umum.
+                    <br>Indeks Massa Tubuh (BMI) dihitung sebagai berat badan anda (dalam kilogram) dibagi dengan kuadrat tinggi badan anda (dalam meter)
+                    atau BMI = Kg/M<sup>2</sup>.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <div class="second-body">
+        <!-- <div>
+            <h1 id="hal1" style="text-align: center; display: flexbox;">Hasil</h1>
+        </div> -->
+        <div id="box-hasil">
+            <h1 id="hal2" style="display: flex;text-align: center;">Berat Badan</h1>
+            <div class="display" id="result"></div>
+            <br>
+                <input type="button" value="Kembali"
+                    style="background-color: #5bbfdd; height: 30px;
+                    width: 100px; color: white; position: relative;" id="kembali" />      
+        </div>
+        <div id="box-hasil2" style="text-align: center;">
+            <article>
+                <p>
+                    <br>
+                    <strong>Anda berada dalam kategori:</strong>
+                    <span id="category"></span>
+                </p>
+            </article>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
