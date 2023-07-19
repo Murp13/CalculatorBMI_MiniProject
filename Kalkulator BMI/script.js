@@ -1,32 +1,35 @@
+
+// Fungsi untuk Form BMI ketika di submit
 document.getElementById('bmiForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     let bb = parseFloat(document.getElementById("bb").value);
     let tb = parseFloat(document.getElementById("tb").value);
 
+    // Peringatan apabila data tidak sesuai
     if (isNaN(bb) || isNaN(tb) || bb <= 0 || tb <= 0) {
         alert('Please enter valid weight and height values.');
         return;
     }
 
-    // Call bmiFunction() to calculate BMI and set category
+    // Inisialisasi bmiFunction()
     let bmi, category;
     [bmi, category] = bmiFunction(bb, tb);
 
-    // Store the BMI value and category in sessionStorage
+    // Menyimpan value dari form di sessionStorage
     sessionStorage.setItem('bmiValue', bmi);
     sessionStorage.setItem('categoryValue', category);
 
-    // Hide the first body and show the second body
+    //maka menyembunyikan body pertama dan menampilikan body kedua
     document.querySelector('.first-body').style.display = 'none';
     document.querySelector('.second-body').style.display = 'block';
 
-    // Display the BMI value and category
+    // Menampilkan hasil BMI value dan category 
     document.getElementById('result').innerHTML = `
         <div style="font-size: 60px; font-weight: 700; letter-spacing: 0.9px; text-align: center;">${bmi}</div>
         <div style="font-size: 22px; text-align: center; color: var(--category-color);">${category}</div>`;
 
-    // Set the color class based on the category
+    // Set warna berdasarkan kategori
     let categoryElement = document.getElementById('category');
     categoryElement.classList.remove('category-kekurangan', 'category-normal', 'category-kelebihan', 'category-obesitas');
 
@@ -46,19 +49,21 @@ document.getElementById('bmiForm').addEventListener('submit', function (e) {
 
 });
 
-// When the "Kembali" button is clicked, show the first body and hide the second body
+// Tombol"Kembali"
+// Ketika Tombol"Kembali" aktif, maka menampilkan body pertama dan menyembunyikan body kedua
 document.getElementById('kembali').addEventListener('click', function (e) {
     e.preventDefault();
 
-    // Clear the stored BMI value and category in sessionStorage
+    // Menghapus value yang masih ada di sessionStorage
     sessionStorage.removeItem('bmiValue');
     sessionStorage.removeItem('categoryValue');
 
-    // Hide the second body and show the first body
+    // Menampilkan body kedua dan menyembunyikan body pertama
     document.querySelector('.first-body').style.display = 'block';
     document.querySelector('.second-body').style.display = 'none';
 });
 
+// Perhitungan BMI
 function bmiFunction(bb, tb) {
     let bmi = (bb / Math.pow(tb / 100, 2)).toFixed(1);
     let category;
